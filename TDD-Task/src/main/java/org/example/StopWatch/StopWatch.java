@@ -3,9 +3,13 @@ package org.example.StopWatch;
 public class StopWatch {
 
     int minutes = 0;
+    int hours = 0;
     public void addMinutes(int minutes) {
         if (minutes > 0) {
             this.minutes += minutes;
+
+            this.hours += minutes / 60;
+            this.minutes %= 60;
         }
     }
 
@@ -14,6 +18,6 @@ public class StopWatch {
     }
 
     public int getHours() {
-        return 0;
+        return this.hours;
     }
 }

@@ -31,11 +31,11 @@ public class StopWatchTest {
     public void hoursShouldBeAdded(){
         StopWatch sw = new StopWatch();
 
-        sw.addMinutes(61);
+        sw.addMinutes(120);
         int hours = sw.getHours();
         int minutes = sw.getMinutes();
 
-        Assertions.assertArrayEquals(new int[]{1 , 1}, new int[]{minutes, hours});
+        Assertions.assertArrayEquals(new int[]{0 , 2}, new int[]{minutes, hours});
     }
 
 }
