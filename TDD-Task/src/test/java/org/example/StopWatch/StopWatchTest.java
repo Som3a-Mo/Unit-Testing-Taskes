@@ -17,4 +17,14 @@ public class StopWatchTest {
         Assertions.assertEquals(5, minutes);
     }
 
+    @Test
+    public void negativeMinutesShouldNotBeAllowed(){
+        StopWatch sw = new StopWatch();
+
+        sw.addMinutes(-5);
+        int minutes = sw.getMinutes();
+
+        Assertions.assertEquals(0, minutes);
+    }
+
 }
