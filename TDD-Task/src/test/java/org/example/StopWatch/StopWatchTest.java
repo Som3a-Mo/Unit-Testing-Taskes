@@ -38,4 +38,15 @@ public class StopWatchTest {
         Assertions.assertArrayEquals(new int[]{0 , 2}, new int[]{minutes, hours});
     }
 
+    @Test
+    public void daysShouldBeAdded(){
+        StopWatch sw = new StopWatch();
+
+        sw.addMinutes(1440);
+        int hours = sw.getHours();
+        int days = sw.getDays();
+
+        Assertions.assertArrayEquals(new int[]{0 , 1}, new int[]{hours, days});
+    }
+
 }

@@ -20,4 +20,8 @@ public class StopWatch {
     public int getHours() {
         return this.hours;
     }
+
+    public int getDays() {
+        return 0;
+    }
 }
