@@ -31,5 +31,6 @@ public class StopWatch {
     }
 
     public void setWorkingHours(int i) {
+        this.workingHours = i;
     }
 }
