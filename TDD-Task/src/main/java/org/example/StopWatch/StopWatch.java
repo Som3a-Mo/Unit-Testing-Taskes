@@ -29,4 +29,7 @@ public class StopWatch {
     public int getDays() {
         return this.days;
     }
+
+    public void setWorkingHours(int i) {
+    }
 }

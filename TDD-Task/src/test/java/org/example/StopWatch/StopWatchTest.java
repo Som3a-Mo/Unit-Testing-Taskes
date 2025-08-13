@@ -49,4 +49,15 @@ public class StopWatchTest {
         Assertions.assertArrayEquals(new int[]{0 , 1}, new int[]{hours, days});
     }
 
+    @Test
+    public void daysShouldIncreaseAccordingToWorkingHours(){
+        StopWatch sw = new StopWatch();
+        sw.setWorkingHours(8);
+
+        sw.addMinutes(960);
+        int days = sw.getDays();
+
+        Assertions.assertEquals(2, days);
+    }
+
 }
