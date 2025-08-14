@@ -32,4 +32,19 @@ public class AccountManagerTest {
         Assertions.assertEquals("insufficient account balance", result);
     }
 
+    @Test
+    void givenCustomerWithInsufficientBalanceAndMaxCredit_whenWithdraw_thenFailed() {
+        // Arrange
+        AccountManager am = new AccountManagerImpl();
+        Customer c = new Customer();
+        c.setBalance(100);
+        c.setCreditAllowed(true);
+
+        // Act
+        String result = am.withdraw(c, 2000);
+
+        // Assert
+        Assertions.assertEquals("maximum credit exceeded", result);
+    }
+
 }
