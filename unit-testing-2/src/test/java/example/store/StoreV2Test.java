@@ -12,7 +12,7 @@ import static org.mockito.Mockito.*;
 public class StoreV2Test {
 
     @Test
-    void test() {
+    void shouldDecrementProductQuantity_whenBuyWithSufficientQuantityAndSuccessfulWithdraw() {
         // Arrange
         AccountManager accountManager = mock(AccountManager.class);
         when(accountManager.withdraw(any(), anyInt())).thenReturn("success");
@@ -29,7 +29,7 @@ public class StoreV2Test {
     }
 
     @Test
-    void givenProductWithInsufficientQuantity_whenBuy_thenFailed (){
+    void shouldThrowProductOutOfStockException_whenBuyWithZeroQuantity (){
 
         AccountManager accountManager = mock(AccountManager.class);
         when(accountManager.withdraw(any(), anyInt())).thenReturn("success");
@@ -47,7 +47,7 @@ public class StoreV2Test {
     }
 
     @Test
-    void givenProductWithSufficientQuantityAndFailedWithdraw_whenBuy_thenFailed() {
+    void shouldThrowPaymentFailureException_whenBuyWithSufficientQuantityAndFailedWithdraw() {
         // Arrange
         AccountManager accountManager = mock(AccountManager.class);
         when(accountManager.withdraw(any(), anyInt())).thenReturn("insufficient account balance");

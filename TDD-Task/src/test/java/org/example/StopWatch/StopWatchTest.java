@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class StopWatchTest {
     @Test
-    public void minutesShouldAdd(){
+    public void shouldAddMinutesWhenPositiveValueGiven(){
         // Arrange
         StopWatch sw = new StopWatch();
 
@@ -18,7 +18,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void negativeMinutesShouldNotBeAllowed(){
+    public void shouldNotAddMinutesWhenNegativeValueGiven(){
         StopWatch sw = new StopWatch();
 
         sw.addMinutes(-5);
@@ -28,7 +28,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void hoursShouldBeAdded(){
+    public void shouldIncreaseHoursWhenMinutesExceedSixty(){
         StopWatch sw = new StopWatch();
 
         sw.addMinutes(120);
@@ -39,7 +39,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void daysShouldBeAdded(){
+    public void shouldIncreaseDaysWhenMinutesExceedTwentyFourHours(){
         StopWatch sw = new StopWatch();
 
         sw.addMinutes(1440);
@@ -50,7 +50,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void daysShouldIncreaseAccordingToWorkingHours(){
+    public void shouldIncreaseDaysBasedOnConfiguredWorkingHours(){
         StopWatch sw = new StopWatch();
         sw.setWorkingHours(8);
 
